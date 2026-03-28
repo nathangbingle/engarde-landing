@@ -48,8 +48,8 @@ nav.solid{background:rgba(8,8,8,.95);backdrop-filter:blur(12px);border-bottom:.5
 #hero{
   height:100vh;min-height:600px;
   position:relative;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;text-align:center;
-  overflow:hidden;
+  justify-content:center;align-items:flex-start;
+  overflow:hidden;padding:0 5rem;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -59,15 +59,9 @@ nav.solid{background:rgba(8,8,8,.95);backdrop-filter:blur(12px);border-bottom:.5
 }
 .hero-img-placeholder{
   position:absolute;inset:0;
-  background:linear-gradient(135deg,#0a1510 0%,#060c09 40%,#080608 70%,#0c0808 100%);
-  display:flex;align-items:center;justify-content:center;
+  background:url('hero.jpg') center center / cover no-repeat;
 }
-.hero-img-placeholder::after{
-  content:'Add your hero fencing portrait here';
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(255,255,255,.12);
-}
-.hero-overlay{position:absolute;inset:0;background:rgba(8,8,8,.42)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right, rgba(8,8,8,.75) 0%, rgba(8,8,8,.55) 50%, rgba(8,8,8,.3) 100%)}
 .hero-content{position:relative;z-index:2;max-width:760px;padding:0 2rem}
 .hero-tag{
   display:inline-flex;align-items:center;gap:8px;
@@ -314,7 +308,7 @@ footer{
     <div class="hero-tag"><span class="hero-tag-dot"></span>USA Fencing Summer Nationals · Portland, OR · July 2026</div>
     <h1 class="hero-h1">Where competitors<br><em>become portraits.</em></h1>
     <p class="hero-sub">A limited portrait series for competing athletes at the nation's largest fencing event. 300 slots. Pre-booking open now.</p>
-    <div class="hero-actions">
+    <div class="hero-actions" style="justify-content:flex-start">
       <a href="#reserve" class="btn-pill btn-pill-white">Reserve My Session</a>
       <a href="#concept" class="btn-pill btn-pill-outline">Learn more</a>
     </div>
