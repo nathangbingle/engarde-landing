@@ -249,55 +249,28 @@ footer{
 
 
 
-/* SCROLL GALLERY */
-.scroll-track-wrap{
-  overflow-x:auto;overflow-y:hidden;
-  cursor:grab;user-select:none;
-  padding:1.5rem 3rem;
-  scrollbar-width:none;-ms-overflow-style:none;
+/* PHOTO GRID */
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
 }
-.scroll-track-wrap::-webkit-scrollbar{display:none}
-.scroll-track-wrap.dragging{cursor:grabbing}
-.scroll-track{
-  display:flex;gap:10px;align-items:stretch;
-  width:max-content;
+.photo-item{
+  aspect-ratio:3/4;
+  overflow:hidden;
+  cursor:zoom-in;
+  background:var(--dark3);
+  border-radius:3px;
 }
-.scroll-item{
-  height:420px;width:280px;flex-shrink:0;
-  border-radius:6px;overflow:hidden;position:relative;
-  transition:transform .3s;
+.photo-item img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .2s;
 }
-.scroll-item-wide{width:360px}
-.scroll-item:hover{transform:scale(1.01)}
-.scroll-item img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;pointer-events:none;
-  transition:transform .5s;
-}
-.scroll-item:hover img{transform:scale(1.03)}
-.scroll-arrows{display:flex;gap:.5rem}
-.scroll-btn{
-  width:40px;height:40px;border-radius:50%;
-  background:transparent;border:.5px solid var(--border);
-  color:var(--white2);font-size:16px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s;
-}
-.scroll-btn:hover{border-color:var(--gold);color:var(--gold)}
+.photo-item:hover img{transform:scale(1.04);opacity:.9}
 
-/* YOUTUBE BACKGROUND VIDEO */
-.yt-bg-wrap{
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:177.78vh;min-width:100%;
-  height:56.25vw;min-height:100%;
-  z-index:1;pointer-events:none;
-}
-.yt-bg-wrap iframe{
-  width:100%;height:100%;border:none;
-}
-
-/* BOOKING FORM */
+/* BOOKING FORM *//* BOOKING FORM */
 .booking-form{display:flex;flex-direction:column;gap:1.25rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .form-group{display:flex;flex-direction:column;gap:.5rem}
@@ -337,8 +310,7 @@ footer{
   .steps,.pricing-grid,.who-cards{grid-template-columns:1fr}
   .stats-row{grid-template-columns:1fr}
   .stat-block:not(:last-child){border-right:none;border-bottom:.5px solid var(--border)}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
-  .g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 1;grid-row:span 1}
+  .photo-grid{grid-template-columns:repeat(2,1fr)}
   .faq-grid{grid-template-columns:1fr}
   .faq-sticky{display:none}
   footer{grid-template-columns:1fr;text-align:center}
@@ -785,34 +757,30 @@ function handleSubmit(e) {
   });
 }
 
-// Gallery drag scroll
-const track = document.getElementById('galleryTrack');
-const wrap = track ? track.parentElement : null;
-if (wrap) {
-  let isDown = false, startX, scrollLeft;
-  wrap.addEventListener('mousedown', e => {
-    isDown = true; wrap.classList.add('dragging');
-    startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft;
-  });
-  wrap.addEventListener('mouseleave', () => { isDown = false; wrap.classList.remove('dragging'); });
-  wrap.addEventListener('mouseup', () => { isDown = false; wrap.classList.remove('dragging'); });
-  wrap.addEventListener('mousemove', e => {
-    if (!isDown) return; e.preventDefault();
-    const x = e.pageX - wrap.offsetLeft;
-    wrap.scrollLeft = scrollLeft - (x - startX) * 1.5;
-  });
-  // Touch support
-  let touchStartX, touchScrollLeft;
-  wrap.addEventListener('touchstart', e => { touchStartX = e.touches[0].pageX; touchScrollLeft = wrap.scrollLeft; });
-  wrap.addEventListener('touchmove', e => {
-    const dx = touchStartX - e.touches[0].pageX;
-    wrap.scrollLeft = touchScrollLeft + dx;
-  });
+// Lightbox
+const lbImgs = ['hero.jpg','g4.jpg','g5.jpg','g3.jpg','g2.jpg','g1.jpg'];
+let lbIdx = 0;
+function openLightbox(i) {
+  lbIdx = i;
+  document.getElementById('lightbox-img').src = lbImgs[i];
+  document.getElementById('lightbox').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
-
-function scrollGallery(dir) {
-  const w = document.getElementById('galleryTrack');
-  if (w) w.parentElement.scrollBy({ left: dir * 420, behavior: 'smooth' });
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function shiftLightbox(dir) {
+  lbIdx = (lbIdx + dir + lbImgs.length) % lbImgs.length;
+  document.getElementById('lightbox-img').src = lbImgs[lbIdx];
+}
+document.addEventListener('keydown', e => {
+  if (document.getElementById('lightbox').style.display === 'flex') {
+    if (e.key === 'ArrowLeft') shiftLightbox(-1);
+    if (e.key === 'ArrowRight') shiftLightbox(1);
+    if (e.key === 'Escape') closeLightbox();
+  }
+}););
 }
 
 </script>
