@@ -700,6 +700,26 @@ function toggleFaq(btn){
   if(!open)item.classList.add('open');
 }
 
+// Show success state
+function showSuccess(isMedalist) {
+  const form = document.getElementById('bookingForm');
+  form.querySelectorAll('.form-row, .form-group, .form-promo, .form-submit-row').forEach(el => el.style.display = 'none');
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  const payBtn = document.getElementById('paymentBtn');
+  if (isMedalist) {
+    payBtn.textContent = 'Medalist — just stop by with your medal';
+    payBtn.style.pointerEvents = 'none';
+    payBtn.style.opacity = '0.5';
+    payBtn.removeAttribute('href');
+  } else {
+    payBtn.href = 'https://buy.stripe.com/bJe3cvfw666leVk1vqgA801';
+    payBtn.setAttribute('target', '_blank');
+    payBtn.textContent = 'Pay $25 Reservation Fee →';
+  }
+  success.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
 // Form submission
 function handleSubmit(e) {
   e.preventDefault();
@@ -725,7 +745,7 @@ function handleSubmit(e) {
       payBtn.style.pointerEvents = 'none';
       payBtn.style.background = 'var(--gray)';
     } else {
-      payBtn.href = 'REPLACE_WITH_PAYMENT_LINK'; // Stripe / Square / PayPal link here
+      payBtn.href = 'https://buy.stripe.com/bJe3cvfw666leVk1vqgA801'; // Stripe / Square / PayPal link here
     }
   }).catch(() => {
     // Fallback: show success anyway, collect via email
