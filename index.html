@@ -134,10 +134,44 @@ h2 span{color:var(--gold)}
 .lb-next{right:1.5rem;top:50%;transform:translateY(-50%)}
 .lb-close{top:1.5rem;right:1.5rem;font-size:1.5rem}
 
-/* ── VIDEO ── */
-#vid{position:relative;height:85vh;min-height:500px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
-.yt-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:178vh;min-width:100%;height:100vh;min-height:100%;pointer-events:none}
-.yt-wrap iframe{width:100%;height:100%;border:none}
+/* ── VIDEO (YouTube full-bleed “cover” — fills #vid at any size) ── */
+#vid{
+  position:relative;
+  height:85vh;
+  min-height:500px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  container-type:size;
+  container-name:vid;
+}
+.yt-bg-wrap{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  overflow:hidden;
+  pointer-events:none;
+}
+/* 16:9 iframe scaled like object-fit:cover relative to #vid (not the whole viewport) */
+.yt-bg-wrap iframe{
+  position:absolute;
+  top:50%;
+  left:50%;
+  border:none;
+  width:max(100%,calc(100cqh * 16 / 9));
+  height:max(100%,calc(100cqw * 9 / 16));
+  transform:translate(-50%,-50%);
+}
+/* Fallback when container query units unavailable: viewport-based cover + center crop */
+@supports not (width:1cqw){
+  .yt-bg-wrap iframe{
+    width:177.78vh;
+    height:100vh;
+    min-width:100%;
+    min-height:100%;
+  }
+}
 .vid-ov{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(8,8,8,.38);z-index:2}
 .vid-cta{position:relative;z-index:3;margin-bottom:3rem}
 
@@ -200,11 +234,6 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:2rem 3
 .f-mid a:hover,.f-right a:hover{color:var(--gold)}
 .f-right{text-align:right}
 .f-copy{grid-column:1/-1;text-align:center;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.16);border-top:.5px solid var(--border);padding-top:1.25rem;margin-top:.25rem}
-
-/* ── YT BG ── */
-.yt-bg-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;pointer-events:none;width:100vw;height:56.25vw}
-@media (max-aspect-ratio:16/9){.yt-bg-wrap{width:177.78vh;height:100vh}}
-.yt-bg-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 
 /* ── MOBILE ── */
 @media(max-width:768px){
@@ -515,7 +544,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:2rem 3
 <footer>
   <div class="f-logo">Nathan Bingle Photography</div>
   <div class="f-mid">
-    <a href="mailto:nathan@nathanbinglephotography.com">nathan@nathanbinglephotography.com</a>
+    <a href="/cdn-cgi/l/email-protection#dfb1beabb7beb19fb1beabb7beb1bdb6b1b8b3baafb7b0abb0b8adbeafb7a6f1bcb0b2"><span class="__cf_email__" data-cfemail="f39d92879b929db39d92879b929d919a9d949f96839b9c879c948192839b8add909c9e">[email&#160;protected]</span></a>
     <a href="https://nathanbinglephotography.com" target="_blank">nathanbinglephotography.com</a>
   </div>
   <div class="f-right">
@@ -525,7 +554,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:2rem 3
   <div class="f-copy">© 2026 Nathan Bingle Photography · En Garde Portrait Project</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
 window.addEventListener('scroll',function(){
   document.getElementById('nav').classList.toggle('solid',window.scrollY>80);
@@ -602,14 +631,4 @@ function showSuccess(isMedalist){
   form.querySelectorAll('.frow,.fgrp,.fpromo,.fsubrow').forEach(function(el){el.style.display='none';});
   var s=document.getElementById('fsuccess');
   s.style.display='block';
-  var btn=document.getElementById('pay-btn');
-  if(isMedalist){
-    btn.textContent='Medalist confirmed — stop by with your medal';
-    btn.style.pointerEvents='none';
-    btn.style.opacity='0.5';
-  }
-  s.scrollIntoView({behavior:'smooth',block:'center'});
-}
-</script>
-</body>
-</html>
+  var btn=docu
