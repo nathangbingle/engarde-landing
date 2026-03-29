@@ -246,14 +246,7 @@ footer{
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .fade-up.visible{opacity:1;transform:none}
 
-.video-wrap{
-  position:relative;width:100%;padding-bottom:56.25%;
-  border-radius:12px;overflow:hidden;background:var(--dark2);
-  border:.5px solid var(--border);
-}
-.video-wrap iframe{
-  position:absolute;top:0;left:0;width:100%;height:100%;border:none;
-}
+
 
 
 /* SCROLL GALLERY */
@@ -291,6 +284,18 @@ footer{
   transition:all .2s;
 }
 .scroll-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* YOUTUBE BACKGROUND VIDEO */
+.yt-bg-wrap{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:177.78vh;min-width:100%;
+  height:56.25vw;min-height:100%;
+  z-index:1;pointer-events:none;
+}
+.yt-bg-wrap iframe{
+  width:100%;height:100%;border:none;
+}
 
 /* BOOKING FORM */
 .booking-form{display:flex;flex-direction:column;gap:1.25rem}
@@ -498,15 +503,22 @@ footer{
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="section" style="background:var(--black);padding-top:0">
-  <div class="section-inner">
-    <div class="eyebrow">Watch</div>
-    <h2 class="section-h fade-up">See What <span>We Do.</span></h2>
-    <div class="video-wrap fade-up">
-      <iframe src="https://drive.google.com/file/d/1iOKhCwxMXE-F_b5_VTMiXUzxM-qCvDd7/preview" 
-        allow="autoplay" allowfullscreen></iframe>
-    </div>
+<!-- BACKGROUND VIDEO -->
+<section id="videobg" style="position:relative;height:85vh;min-height:500px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;">
+  <div class="yt-bg-wrap">
+    <iframe id="ytbg"
+      src="https://www.youtube.com/embed/EerJZ-2IzrU?autoplay=1&mute=1&loop=1&playlist=EerJZ-2IzrU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      frameborder="0">
+    </iframe>
+  </div>
+  <div style="position:absolute;inset:0;background:rgba(8,8,8,.52);z-index:2"></div>
+  <div style="position:relative;z-index:3;max-width:680px;padding:0 2rem">
+    <div class="eyebrow" style="justify-content:center;display:flex;margin-bottom:1.25rem">The Work</div>
+    <h2 style="font-family:'Josefin Sans',sans-serif;font-size:clamp(32px,5vw,64px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.0;color:#f5f2ee;margin-bottom:1.25rem">See What We <span style="color:#C5A55A">Shoot.</span></h2>
+    <p style="font-size:clamp(13px,1.4vw,16px);color:#c8c4bc;max-width:440px;margin:0 auto 2rem;font-weight:300;line-height:1.8">Elite athlete portraits at USA Fencing events — this is what your session looks like.</p>
+    <a href="#book" class="btn-pill btn-pill-gold" style="font-size:11px;padding:13px 28px">Reserve My Session</a>
   </div>
 </section>
 
