@@ -185,20 +185,6 @@ nav.solid{background:rgba(8,8,8,.96);backdrop-filter:blur(16px);border-bottom:.5
 .promo-body{font-size:13px;color:var(--white2);line-height:1.75}
 .promo-body strong{color:var(--white);font-weight:500}
 
-/* GALLERY */
-#gallery{background:var(--dark)}
-.gallery-sub{font-size:13px;color:var(--gray);margin-top:.25rem;margin-bottom:3rem}
-.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:220px;gap:6px}
-.gi{background:var(--dark3);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:opacity .2s;cursor:pointer}
-.gi:hover{opacity:.8}
-.gi img{width:100%;height:100%;object-fit:cover}
-.gi-ph{display:flex;flex-direction:column;align-items:center;gap:6px}
-.gi-ph svg{opacity:.1}
-.gi-ph span{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);opacity:.18}
-.g1{grid-column:span 5;grid-row:span 2}
-.g2{grid-column:span 4}.g3{grid-column:span 3}
-.g4{grid-column:span 4}.g5{grid-column:span 3}.g6{grid-column:span 5}
-
 /* WHO */
 #who{background:var(--black)}
 .who-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:3.5rem}
@@ -269,6 +255,42 @@ footer{
   position:absolute;top:0;left:0;width:100%;height:100%;border:none;
 }
 
+
+/* SCROLL GALLERY */
+.scroll-track-wrap{
+  overflow-x:auto;overflow-y:hidden;
+  cursor:grab;user-select:none;
+  padding:1.5rem 3rem;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.scroll-track-wrap::-webkit-scrollbar{display:none}
+.scroll-track-wrap.dragging{cursor:grabbing}
+.scroll-track{
+  display:flex;gap:10px;align-items:stretch;
+  width:max-content;
+}
+.scroll-item{
+  height:520px;width:360px;flex-shrink:0;
+  border-radius:6px;overflow:hidden;position:relative;
+  transition:transform .3s;
+}
+.scroll-item-wide{width:480px}
+.scroll-item:hover{transform:scale(1.01)}
+.scroll-item img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;pointer-events:none;
+  transition:transform .5s;
+}
+.scroll-item:hover img{transform:scale(1.03)}
+.scroll-arrows{display:flex;gap:.5rem}
+.scroll-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:transparent;border:.5px solid var(--border);
+  color:var(--white2);font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.scroll-btn:hover{border-color:var(--gold);color:var(--gold)}
 
 /* BOOKING FORM */
 .booking-form{display:flex;flex-direction:column;gap:1.25rem}
@@ -753,6 +775,37 @@ function handleSubmit(e) {
     document.getElementById('formSuccess').style.display = 'block';
   });
 }
+
+// Gallery drag scroll
+const track = document.getElementById('galleryTrack');
+const wrap = track ? track.parentElement : null;
+if (wrap) {
+  let isDown = false, startX, scrollLeft;
+  wrap.addEventListener('mousedown', e => {
+    isDown = true; wrap.classList.add('dragging');
+    startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft;
+  });
+  wrap.addEventListener('mouseleave', () => { isDown = false; wrap.classList.remove('dragging'); });
+  wrap.addEventListener('mouseup', () => { isDown = false; wrap.classList.remove('dragging'); });
+  wrap.addEventListener('mousemove', e => {
+    if (!isDown) return; e.preventDefault();
+    const x = e.pageX - wrap.offsetLeft;
+    wrap.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+  // Touch support
+  let touchStartX, touchScrollLeft;
+  wrap.addEventListener('touchstart', e => { touchStartX = e.touches[0].pageX; touchScrollLeft = wrap.scrollLeft; });
+  wrap.addEventListener('touchmove', e => {
+    const dx = touchStartX - e.touches[0].pageX;
+    wrap.scrollLeft = touchScrollLeft + dx;
+  });
+}
+
+function scrollGallery(dir) {
+  const w = document.getElementById('galleryTrack');
+  if (w) w.parentElement.scrollBy({ left: dir * 420, behavior: 'smooth' });
+}
+
 </script>
 </body>
 </html>
