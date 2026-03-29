@@ -4,790 +4,611 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>En Garde Portrait Project — USA Fencing Summer Nationals 2026</title>
-<meta name="description" content="Professional athlete portraits at USA Fencing Summer Nationals in Portland, Oregon. July 1–6, 2026. Reserve your session now — $25 holds your spot.">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<meta name="description" content="Professional athlete portraits at USA Fencing Summer Nationals in Portland, Oregon. July 1–6, 2026. $25 holds your spot.">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --black:#080808;
-  --dark:#0f0f0f;
-  --dark2:#161616;
-  --dark3:#1e1e1e;
-  --gold:#C5A55A;
-  --gold-light:#d9bc7e;
-  --gold-dim:rgba(197,165,90,0.12);
-  --white:#f5f2ee;
-  --white2:#c8c4bc;
-  --gray:#777;
-  --border:rgba(255,255,255,0.08);
-  --gold-border:rgba(197,165,90,0.22);
+  --black:#080808;--dark:#0f0f0f;--dark2:#161616;--dark3:#1e1e1e;
+  --gold:#C5A55A;--gold2:#d9bc7e;--gold-dim:rgba(197,165,90,0.12);
+  --white:#f5f2ee;--white2:#c8c4bc;--gray:#777;
+  --border:rgba(255,255,255,0.08);--gborder:rgba(197,165,90,0.22);
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:'Poppins',sans-serif;font-weight:300;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  padding:1.4rem 3rem;
-  display:flex;justify-content:space-between;align-items:center;
-  transition:all .35s;
-}
-nav.solid{background:rgba(8,8,8,.96);backdrop-filter:blur(16px);border-bottom:.5px solid var(--border)}
-.nav-logo{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .35s}
+nav.solid{background:rgba(8,8,8,.96);border-bottom:.5px solid var(--border)}
+.nav-logo{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}
 .nav-links{display:flex;align-items:center;gap:2.5rem}
 .nav-links a{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--white2);transition:color .2s}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{
-  font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;
-  letter-spacing:.12em;text-transform:uppercase;
-  color:var(--black);background:var(--gold);
-  padding:11px 24px;border-radius:100px;
-  transition:all .2s;
-}
-.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.nav-pill{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:11px 24px;border-radius:100px;transition:all .2s}
+.nav-pill:hover{background:var(--gold2)}
 
-/* HERO */
-#hero{
-  height:100vh;min-height:620px;
-  position:relative;display:flex;flex-direction:column;
-  justify-content:center;align-items:flex-start;
-  overflow:hidden;padding:0 5rem;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:url('hero.jpg') center center / cover no-repeat;
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(8,8,8,.82) 0%,rgba(8,8,8,.6) 55%,rgba(8,8,8,.25) 100%);
-}
-.hero-content{position:relative;z-index:2;max-width:620px}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:2rem;
-}
+/* ── HERO ── */
+#hero{height:100vh;min-height:620px;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;overflow:hidden;padding:0 5rem}
+.hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('hero.jpg') center 30% / cover no-repeat}
+.hero-ov{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to right,rgba(8,8,8,.85) 0%,rgba(8,8,8,.6) 55%,rgba(8,8,8,.18) 100%)}
+.hero-c{position:relative;z-index:2;max-width:600px}
+.hero-logo{height:72px;width:auto;margin-bottom:1.75rem;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+.hero-tag{display:flex;align-items:center;gap:10px;font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
 .hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.hero-h1{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:clamp(38px,6.5vw,80px);
-  font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  line-height:1.0;color:var(--white);margin-bottom:1.25rem;
-}
-.hero-h1 span{color:var(--gold)}
-.hero-sub{
-  font-size:clamp(14px,1.4vw,16px);color:var(--white2);
-  max-width:460px;margin-bottom:2.5rem;font-weight:300;line-height:1.8;
-}
-.hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
-.btn-pill{
-  display:inline-block;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-  padding:14px 28px;border-radius:100px;transition:all .2s;cursor:pointer;
-}
-.btn-pill-gold{background:var(--gold);color:var(--black)}
-.btn-pill-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
-.btn-pill-outline{background:transparent;color:var(--white2);border:1px solid rgba(255,255,255,.25)}
-.btn-pill-outline:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
+h1{font-family:'Josefin Sans',sans-serif;font-size:clamp(36px,6vw,76px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.0;color:var(--white);margin-bottom:1.25rem}
+h1 span{color:var(--gold)}
+.hero-sub{font-size:clamp(13px,1.3vw,15px);color:var(--white2);max-width:440px;margin-bottom:2rem;font-weight:300;line-height:1.85}
+.hero-btns{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.btn{display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:100px;transition:all .2s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--white2);border:1px solid rgba(255,255,255,.25)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
 .hero-note{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em;font-family:'Josefin Sans',sans-serif}
-.hero-scroll{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;
-}
-.hero-scroll-text{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28)}
-.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.25),transparent);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.25}50%{opacity:.7}}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.scroll-hint span{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.scroll-hint-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.25),transparent);animation:scrollp 2s ease-in-out infinite}
+@keyframes scrollp{0%,100%{opacity:.25}50%{opacity:.7}}
 
-/* COUNTDOWN */
-.countdown-strip{
-  background:var(--dark2);
-  border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);
-  padding:1.75rem 3rem;
-  display:flex;align-items:center;justify-content:center;
-}
-.cd-unit{display:flex;flex-direction:column;align-items:center;padding:0 2.5rem}
-.cd-unit:not(:last-child){border-right:.5px solid var(--border)}
-.cd-num{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.04em}
-.cd-label{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-top:5px}
+/* ── COUNTDOWN ── */
+.cd-strip{background:var(--dark2);border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);padding:1.75rem 3rem;display:flex;align-items:center;justify-content:center}
+.cd-u{display:flex;flex-direction:column;align-items:center;padding:0 2.5rem}
+.cd-u:not(:last-child){border-right:.5px solid var(--border)}
+.cd-n{font-family:'Josefin Sans',sans-serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.04em}
+.cd-l{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-top:5px}
 
-/* SECTIONS */
-.section{padding:7rem 3rem}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-inner-sm{max-width:700px;margin:0 auto}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.5rem;
-}
+/* ── SHARED SECTION STYLES ── */
+.sec{padding:7rem 3rem}
+.inner{max-width:1100px;margin:0 auto}
+.inner-sm{max-width:700px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
 .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
-.section-h{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:clamp(26px,3.5vw,46px);
-  font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  line-height:1.1;color:var(--white);margin-bottom:1.5rem;
-}
-.section-h span{color:var(--gold)}
+h2{font-family:'Josefin Sans',sans-serif;font-size:clamp(24px,3.5vw,44px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.1;color:var(--white);margin-bottom:1.5rem}
+h2 span{color:var(--gold)}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+.fade.in{opacity:1;transform:none}
 
-/* CONCEPT */
+/* ── CONCEPT ── */
 #concept{background:var(--black);text-align:center}
-.concept-rule{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold-border),transparent);margin:0 auto 3rem}
-.concept-body{font-size:clamp(14px,1.4vw,16px);color:var(--white2);line-height:1.9;font-weight:300;margin-bottom:0}
-.concept-body p+p{margin-top:1.25rem}
-.concept-body strong{color:var(--white);font-weight:500}
-.stats-row{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:4rem;
-}
-.stat-block{padding:2.25rem;text-align:center}
-.stat-block:not(:last-child){border-right:.5px solid var(--border)}
-.stat-num{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.04em}
-.stat-label{font-size:12px;color:var(--gray);margin-top:.5rem;letter-spacing:.04em}
+.c-rule{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gborder),transparent);margin:0 auto 3rem}
+.c-body{font-size:clamp(14px,1.4vw,16px);color:var(--white2);line-height:1.9;font-weight:300}
+.c-body p+p{margin-top:1.25rem}
+.c-body strong{color:var(--white);font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:4rem}
+.stat{padding:2.25rem;text-align:center}
+.stat:not(:last-child){border-right:.5px solid var(--border)}
+.stat-n{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.04em}
+.stat-l{font-size:12px;color:var(--gray);margin-top:.5rem}
 
-/* HOW IT WORKS */
+/* ── HOW IT WORKS ── */
 #how{background:var(--dark)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:3.5rem}
 .step{background:var(--dark2);padding:2.5rem 2rem}
-.step-num{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:700;color:var(--gold);opacity:.45;line-height:1;margin-bottom:1.25rem;letter-spacing:.04em}
-.step-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem}
-.step-body{font-size:13px;color:var(--gray);line-height:1.85}
+.step-n{font-family:'Josefin Sans',sans-serif;font-size:44px;font-weight:700;color:var(--gold);opacity:.4;line-height:1;margin-bottom:1.25rem}
+.step-t{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem}
+.step-b{font-size:13px;color:var(--gray);line-height:1.85}
 
-/* PRICING */
+/* ── PRICING ── */
 #pricing{background:var(--black)}
-.pricing-note-box{
-  background:var(--dark2);border:.5px solid var(--gold-border);
-  border-radius:10px;padding:1.5rem 2rem;margin-bottom:2.5rem;
-  max-width:780px;
-}
-.pricing-note-box p{font-size:13px;color:var(--white2);line-height:1.8}
-.pricing-note-box p+p{margin-top:.6rem}
-.pricing-note-box strong{color:var(--gold);font-weight:500}
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:.5px solid var(--border);border-radius:12px;overflow:hidden;max-width:780px;margin-bottom:1.5rem}
-.price-card{background:var(--dark2);padding:2.5rem}
-.price-card.featured{background:var(--dark3)}
-.price-type{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:.75rem}
-.price-amount{font-family:'Josefin Sans',sans-serif;font-size:52px;font-weight:700;color:var(--white);line-height:1;margin-bottom:.25rem;letter-spacing:.02em}
-.price-card.featured .price-amount{color:var(--gold)}
-.price-sub{font-size:12px;color:var(--gray);margin-bottom:1.75rem;line-height:1.6}
-.price-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
-.price-list li{font-size:13px;color:var(--white2);display:flex;align-items:flex-start;gap:.6rem}
-.price-list li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
-.price-card:not(.featured) .price-list li::before{color:var(--gray)}
-.promotions{max-width:780px;border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem}
-.promo-header{padding:1.25rem 1.75rem;border-bottom:.5px solid var(--border);background:var(--dark3)}
-.promo-header-text{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.promo-item{padding:1.25rem 1.75rem;border-bottom:.5px solid var(--border);display:flex;gap:1rem;align-items:flex-start}
-.promo-item:last-child{border-bottom:none}
-.promo-tag{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);border:.5px solid var(--gold-border);padding:4px 10px;border-radius:100px;flex-shrink:0;margin-top:2px}
-.promo-body{font-size:13px;color:var(--white2);line-height:1.75}
-.promo-body strong{color:var(--white);font-weight:500}
+.p-note{background:var(--dark2);border:.5px solid var(--gborder);border-radius:10px;padding:1.5rem 2rem;margin-bottom:2.5rem;max-width:780px}
+.p-note p{font-size:13px;color:var(--white2);line-height:1.8}
+.p-note p+p{margin-top:.6rem}
+.p-note strong{color:var(--gold);font-weight:500}
+.p-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:.5px solid var(--border);border-radius:12px;overflow:hidden;max-width:780px;margin-bottom:1.5rem}
+.p-card{background:var(--dark2);padding:2.5rem}
+.p-card.feat{background:var(--dark3)}
+.p-type{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:.75rem}
+.p-amt{font-family:'Josefin Sans',sans-serif;font-size:52px;font-weight:700;color:var(--white);line-height:1;margin-bottom:.25rem}
+.p-card.feat .p-amt{color:var(--gold)}
+.p-sub{font-size:12px;color:var(--gray);margin-bottom:1.75rem;line-height:1.6}
+.p-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.p-list li{font-size:13px;color:var(--white2);display:flex;align-items:flex-start;gap:.6rem}
+.p-list li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
+.p-card:not(.feat) .p-list li::before{color:var(--gray)}
+.promos{max-width:780px;border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem}
+.promo-hd{padding:1.25rem 1.75rem;border-bottom:.5px solid var(--border);background:var(--dark3)}
+.promo-hd-t{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.promo-row{padding:1.25rem 1.75rem;border-bottom:.5px solid var(--border);display:flex;gap:1rem;align-items:flex-start}
+.promo-row:last-child{border-bottom:none}
+.promo-tag{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);border:.5px solid var(--gborder);padding:4px 10px;border-radius:100px;flex-shrink:0;margin-top:2px}
+.promo-txt{font-size:13px;color:var(--white2);line-height:1.75}
+.promo-txt strong{color:var(--white);font-weight:500}
 
-/* WHO */
+/* ── GALLERY ── */
+#gallery{background:var(--dark)}
+.gallery-sub{font-size:13px;color:var(--gray);margin-top:.25rem;margin-bottom:2.5rem}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.photo-item{aspect-ratio:3/4;overflow:hidden;cursor:zoom-in;background:var(--dark3);border-radius:3px}
+.photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .2s}
+.photo-item:hover img{transform:scale(1.04);opacity:.9}
+
+/* ── LIGHTBOX ── */
+#lb{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px;pointer-events:none}
+.lb-btn{position:absolute;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;padding:.75rem;font-size:2rem;line-height:1;transition:color .2s}
+.lb-btn:hover{color:var(--gold)}
+.lb-prev{left:1.5rem;top:50%;transform:translateY(-50%)}
+.lb-next{right:1.5rem;top:50%;transform:translateY(-50%)}
+.lb-close{top:1.5rem;right:1.5rem;font-size:1.5rem}
+
+/* ── VIDEO ── */
+#vid{position:relative;height:85vh;min-height:500px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.yt-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:178vh;min-width:100%;height:100vh;min-height:100%;pointer-events:none}
+.yt-wrap iframe{width:100%;height:100%;border:none}
+.vid-ov{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(8,8,8,.38);z-index:2}
+.vid-cta{position:relative;z-index:3;margin-bottom:3rem}
+
+/* ── WHO ── */
 #who{background:var(--black)}
 .who-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:3.5rem}
 .who-card{background:var(--dark2);padding:2.5rem 2rem}
-.who-num{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-bottom:1.25rem}
-.who-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem}
-.who-body{font-size:13px;color:var(--gray);line-height:1.85}
+.who-n{font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-bottom:1.25rem}
+.who-t{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem}
+.who-b{font-size:13px;color:var(--gray);line-height:1.85}
 
-/* FAQ */
+/* ── FAQ ── */
 #faq{background:var(--dark)}
-.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+.faq-wrap{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
 .faq-list{border-top:.5px solid var(--border)}
 .faq-item{border-bottom:.5px solid var(--border)}
-.faq-q{
-  width:100%;background:none;border:none;
-  color:var(--white);
-  font-family:'Poppins',sans-serif;font-size:13px;font-weight:300;
-  text-align:left;padding:1.25rem 0;cursor:pointer;
-  display:flex;justify-content:space-between;align-items:center;gap:1rem;
-  transition:color .2s;
-}
+.faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Poppins',sans-serif;font-size:13px;font-weight:300;text-align:left;padding:1.25rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color .2s}
 .faq-q:hover{color:var(--gold)}
-.faq-icon{color:var(--gold);transition:transform .25s;flex-shrink:0;font-size:16px;line-height:1;font-family:'Poppins',sans-serif;font-weight:300}
+.faq-icon{color:var(--gold);font-size:16px;transition:transform .25s;flex-shrink:0}
 .faq-a{display:none;padding:0 2rem 1.25rem 0;font-size:13px;color:var(--gray);line-height:1.85}
 .faq-a a{color:var(--gold)}
 .faq-item.open .faq-a{display:block}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 
-/* FINAL CTA */
-#final{
-  background:var(--black);padding:9rem 3rem;
-  text-align:center;position:relative;overflow:hidden;
-}
-.final-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(197,165,90,.06) 0%,transparent 65%);pointer-events:none}
-.final-content{position:relative;z-index:2}
-.final-h{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:clamp(36px,7vw,86px);
-  font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  line-height:.98;color:var(--white);margin-bottom:1.5rem;
-}
-.final-h span{color:var(--gold)}
-.final-body{font-size:clamp(14px,1.4vw,16px);color:var(--white2);max-width:480px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8}
-.final-micro{font-family:'Josefin Sans',sans-serif;font-size:10px;color:rgba(255,255,255,.28);margin-top:1.25rem;letter-spacing:.1em;text-transform:uppercase}
+/* ── BOOKING FORM ── */
+#book{background:var(--dark)}
+.bform{display:flex;flex-direction:column;gap:1.25rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.fgrp{display:flex;flex-direction:column;gap:.5rem}
+.flbl{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.finp{background:var(--dark3);border:.5px solid var(--border);border-radius:6px;padding:13px 16px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none;appearance:none}
+.finp::placeholder{color:var(--gray)}
+.finp:focus{border-color:var(--gborder)}
+.finp option{background:var(--dark3)}
+.ftxt{resize:vertical;min-height:80px}
+.fpromo{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem 1.5rem;background:var(--dark3);border:.5px solid var(--border);border-radius:8px}
+.fcheck-row{display:flex;align-items:flex-start;gap:.75rem}
+.fcheck{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--gold);cursor:pointer}
+.fcheck-lbl{font-size:13px;color:var(--white2);line-height:1.6;cursor:pointer}
+.fsubrow{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding-top:.5rem}
+.ffee{display:flex;align-items:baseline;gap:.75rem}
+.ffee-amt{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:var(--gold)}
+.ffee-lbl{font-size:12px;color:var(--gray);max-width:260px;line-height:1.6}
+.fsuccess{display:none;text-align:center;padding:2.5rem;background:var(--dark3);border:.5px solid var(--gborder);border-radius:10px;margin-top:1rem}
+.fsuccess-icon{font-size:32px;color:var(--gold);margin-bottom:.75rem}
+.fsuccess-t{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.fsuccess-b{font-size:14px;color:var(--white2);line-height:1.75}
 
-/* FOOTER */
-footer{
-  background:var(--dark);border-top:.5px solid var(--border);padding:2rem 3rem;
-  display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:center;
-}
-.footer-logo{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--white2)}
-.footer-mid{text-align:center;display:flex;flex-direction:column;gap:4px}
-.footer-mid a,.footer-right a{font-size:11px;color:var(--gray);transition:color .2s;display:block}
-.footer-mid a:hover,.footer-right a:hover{color:var(--gold)}
-.footer-right{text-align:right}
-.footer-copy{grid-column:1/-1;text-align:center;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.16);border-top:.5px solid var(--border);padding-top:1.25rem;margin-top:.25rem}
+/* ── FINAL CTA ── */
+#final{background:var(--black);padding:9rem 3rem;text-align:center;position:relative;overflow:hidden}
+.final-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(197,165,90,.06),transparent 65%);pointer-events:none}
+.final-c{position:relative;z-index:2}
+.final-note{font-family:'Josefin Sans',sans-serif;font-size:10px;color:rgba(255,255,255,.28);margin-top:1.25rem;letter-spacing:.1em;text-transform:uppercase}
 
-/* ANIM */
-.fade-up{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.fade-up.visible{opacity:1;transform:none}
+/* ── FOOTER ── */
+footer{background:var(--dark);border-top:.5px solid var(--border);padding:2rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:center}
+.f-logo{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--white2)}
+.f-mid{text-align:center;display:flex;flex-direction:column;gap:4px}
+.f-mid a,.f-right a{font-size:11px;color:var(--gray);transition:color .2s;display:block}
+.f-mid a:hover,.f-right a:hover{color:var(--gold)}
+.f-right{text-align:right}
+.f-copy{grid-column:1/-1;text-align:center;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.16);border-top:.5px solid var(--border);padding-top:1.25rem;margin-top:.25rem}
 
+/* ── YT BG ── */
+.yt-bg-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;min-width:100%;height:56.25vw;min-height:100%;z-index:1;pointer-events:none}
+.yt-bg-wrap iframe{width:100%;height:100%;border:none}
 
-
-
-/* PHOTO GRID */
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:6px;
-}
-.photo-item{
-  aspect-ratio:3/4;
-  overflow:hidden;
-  cursor:zoom-in;
-  background:var(--dark3);
-  border-radius:3px;
-}
-.photo-item img{
-  width:100%;height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .2s;
-}
-.photo-item:hover img{transform:scale(1.04);opacity:.9}
-
-/* BOOKING FORM *//* BOOKING FORM */
-.booking-form{display:flex;flex-direction:column;gap:1.25rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.form-group{display:flex;flex-direction:column;gap:.5rem}
-.form-label{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
-.form-input{
-  background:var(--dark3);border:.5px solid var(--border);
-  border-radius:6px;padding:13px 16px;
-  font-family:'Poppins',sans-serif;font-size:13px;font-weight:300;color:var(--white);
-  outline:none;transition:border-color .2s;width:100%;
-  -webkit-appearance:none;appearance:none;
-}
-.form-input::placeholder{color:var(--gray)}
-.form-input:focus{border-color:var(--gold-border)}
-.form-select{cursor:pointer}
-.form-select option{background:var(--dark3);color:var(--white)}
-.form-textarea{resize:vertical;min-height:80px}
-.form-promo{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem 1.5rem;background:var(--dark3);border:.5px solid var(--border);border-radius:8px}
-.promo-check-row{display:flex;align-items:flex-start;gap:.75rem}
-.form-checkbox{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--gold);cursor:pointer}
-.form-check-label{font-size:13px;color:var(--white2);line-height:1.6;cursor:pointer}
-.form-submit-row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding-top:.5rem}
-.form-fee-note{display:flex;align-items:baseline;gap:.75rem}
-.fee-amount{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:var(--gold)}
-.fee-label{font-size:12px;color:var(--gray);max-width:260px;line-height:1.6}
-.form-success{text-align:center;padding:2.5rem;background:var(--dark3);border:.5px solid var(--gold-border);border-radius:10px;margin-top:1rem}
-.success-icon{font-size:32px;color:var(--gold);margin-bottom:.75rem}
-.success-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
-.success-body{font-size:14px;color:var(--white2);line-height:1.75}
-
-/* MOBILE */
+/* ── MOBILE ── */
 @media(max-width:768px){
   nav{padding:1rem 1.25rem}
   .nav-links{display:none}
   #hero{padding:0 1.5rem}
-  .section{padding:4.5rem 1.25rem}
+  .sec{padding:4.5rem 1.25rem}
   #final{padding:6rem 1.25rem}
-  .steps,.pricing-grid,.who-cards{grid-template-columns:1fr}
-  .stats-row{grid-template-columns:1fr}
-  .stat-block:not(:last-child){border-right:none;border-bottom:.5px solid var(--border)}
-  .photo-grid{grid-template-columns:repeat(2,1fr)}
-  .faq-grid{grid-template-columns:1fr}
-  .faq-sticky{display:none}
+  h1{font-size:clamp(34px,10vw,60px)}
+  .steps,.p-cards,.who-cards{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat:not(:last-child){border-right:none;border-bottom:.5px solid var(--border)}
+  .photo-grid{grid-template-columns:1fr 1fr}
+  .faq-wrap{grid-template-columns:1fr}
+  .faq-side{display:none}
   footer{grid-template-columns:1fr;text-align:center}
-  .footer-right{text-align:center}
-  .countdown-strip{padding:1.25rem}
-  .cd-unit{padding:0 1.25rem}
-  .cd-num{font-size:28px}
+  .f-right{text-align:center}
+  .cd-strip{padding:1.25rem}
+  .cd-u{padding:0 1.25rem}
+  .cd-n{font-size:28px}
+  .frow{grid-template-columns:1fr}
+  .hero-logo{height:56px}
 }
 </style>
 </head>
 <body>
 
-<nav id="mainnav">
+<nav id="nav">
   <div class="nav-logo">Nathan Bingle Photography</div>
   <div class="nav-links">
     <a href="#concept">About</a>
     <a href="#how">How It Works</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a href="#book" class="nav-cta">Reserve Now</a>
+    <a href="#book" class="nav-pill">Reserve Now</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div style="margin-bottom:1.5rem"><img src="logo-usaf.png" alt="USA Fencing Summer Nationals 2026" style="height:80px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <img src="logo-usaf.png" alt="USA Fencing Summer Nationals 2026" class="hero-logo">
     <div class="hero-tag"><span class="hero-tag-dot"></span>Portrait Sessions · July 1–6 · 10am–5pm Daily</div>
-    <h1 class="hero-h1">The Portrait<br>You've <span>Earned.</span></h1>
+    <h1>The Portrait<br>You've <span>Earned.</span></h1>
     <p class="hero-sub">A limited portrait series for competing athletes at the nation's largest fencing event. All age groups welcome. You only purchase the images you love.</p>
-    <div class="hero-actions">
-      <a href="#book" class="btn-pill btn-pill-gold">Reserve My Session</a>
-      <a href="#concept" class="btn-pill btn-pill-outline">Learn More</a>
+    <div class="hero-btns">
+      <a href="#book" class="btn btn-gold">Reserve My Session</a>
+      <a href="#concept" class="btn btn-ghost">Learn More</a>
     </div>
     <p class="hero-note">$25 reservation fee holds your spot · Applied to your purchase</p>
   </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-text">Scroll to explore</div>
-    <div class="hero-scroll-line"></div>
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-hint-line"></div>
   </div>
 </section>
 
-<div class="countdown-strip">
-  <div class="cd-unit"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
-  <div class="cd-unit"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
-  <div class="cd-unit"><div class="cd-num" id="cd-min">--</div><div class="cd-label">Minutes</div></div>
-  <div class="cd-unit"><div class="cd-num" id="cd-sec">--</div><div class="cd-label">Seconds</div></div>
+<!-- COUNTDOWN -->
+<div class="cd-strip">
+  <div class="cd-u"><div class="cd-n" id="cd-d">--</div><div class="cd-l">Days</div></div>
+  <div class="cd-u"><div class="cd-n" id="cd-h">--</div><div class="cd-l">Hours</div></div>
+  <div class="cd-u"><div class="cd-n" id="cd-m">--</div><div class="cd-l">Minutes</div></div>
+  <div class="cd-u"><div class="cd-n" id="cd-s">--</div><div class="cd-l">Seconds</div></div>
 </div>
 
-<section id="concept" class="section">
-  <div class="section-inner-sm" style="text-align:center">
+<!-- CONCEPT -->
+<section id="concept" class="sec">
+  <div class="inner-sm" style="text-align:center">
     <div class="eyebrow" style="justify-content:center;display:flex">What This Is</div>
-    <h2 class="section-h fade-up" style="font-size:clamp(28px,5vw,58px)">Your Season.<br><span>Documented.</span></h2>
-    <div class="concept-rule"></div>
-    <div class="concept-body fade-up">
-      <p>You've trained for years for this moment. You've traveled across the country. You're competing at the biggest fencing event in America.</p>
-      <p>The En Garde Portrait Project exists for athletes like you.</p>
-      <p>We set up a full portrait studio on-site at Summer Nationals — dramatic lighting, professional backdrop, your weapon and your gear. We photograph you the way elite athletes should be photographed. <strong>Not a quick snapshot. Not a posed grin. A portrait that looks like the competitor you are.</strong></p>
+    <h2 class="fade" style="font-size:clamp(26px,5vw,56px)">Your Season.<br><span>Documented.</span></h2>
+    <div class="c-rule"></div>
+    <div class="c-body fade">
+      <p>You train year-round. You travel across the country. You compete at the highest level of American fencing.</p>
+      <p>The En Garde Portrait Project gives you a portrait that actually reflects that — studio lighting, your gear, your weapon. Shot on-site at Summer Nationals by a photographer who has been doing this for years at USA Fencing events.</p>
+      <p><strong>Powerful additions to your portfolio, recruiting materials, and social media.</strong> And you only purchase the images you love.</p>
       <p>This is our <strong>only portrait session in 2026.</strong> If you want updated fencing portraits this season, this is your opportunity.</p>
     </div>
-    <div class="stats-row fade-up">
-      <div class="stat-block"><div class="stat-num">6,000+</div><div class="stat-label">Athletes at Summer Nationals</div></div>
-      <div class="stat-block"><div class="stat-num">July 1–6</div><div class="stat-label">10am – 5pm daily</div></div>
-      <div class="stat-block"><div class="stat-num">$25</div><div class="stat-label">Holds your spot</div></div>
+    <div class="stats fade">
+      <div class="stat"><div class="stat-n">6,000+</div><div class="stat-l">Athletes at Summer Nationals</div></div>
+      <div class="stat"><div class="stat-n">July 1–6</div><div class="stat-l">10am–5pm daily</div></div>
+      <div class="stat"><div class="stat-n">$25</div><div class="stat-l">Holds your spot</div></div>
     </div>
   </div>
 </section>
 
-<section id="how" class="section">
-  <div class="section-inner">
+<!-- HOW IT WORKS -->
+<section id="how" class="sec">
+  <div class="inner">
     <div class="eyebrow">How It Works</div>
-    <h2 class="section-h fade-up">Three Steps.<br><span>Zero Hassle.</span></h2>
-    <div class="steps fade-up">
+    <h2 class="fade">Three Steps.<br><span>Zero Hassle.</span></h2>
+    <div class="steps fade">
       <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Reserve Your Slot</div>
-        <div class="step-body">Pay the $25 reservation fee online to lock in your date and time. This guarantees your spot and is applied toward your image purchase. Spots fill before the event — reserve before arriving at the Convention Center.</div>
+        <div class="step-n">01</div>
+        <div class="step-t">Reserve Your Slot</div>
+        <div class="step-b">Pay the $25 reservation fee online to lock in your date and time window. Spots fill before the event — reserve before arriving at the Convention Center.</div>
       </div>
       <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Show Up Ready</div>
-        <div class="step-body">Come in your competition gear with your weapon. Don't stress about perfectly clean whites or wrinkle-free gear — that's what professional editing is for. We handle the lighting, backdrop, and posing direction.</div>
+        <div class="step-n">02</div>
+        <div class="step-t">Show Up Ready</div>
+        <div class="step-b">Come in your competition gear with your weapon. Don't stress about clean whites or wrinkles — that's what professional editing is for. We handle everything else.</div>
       </div>
       <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">Purchase What You Love</div>
-        <div class="step-body">You only buy the images you love. Prints start at $35. Digital images start at $50. View the full price guide to see all available packages before you book.</div>
+        <div class="step-n">03</div>
+        <div class="step-t">Purchase What You Love</div>
+        <div class="step-b">You only buy the images you love. No minimum purchase. Prints from $35. Digital images from $50. The $25 fee is applied toward whatever you decide to buy.</div>
       </div>
     </div>
     <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap">
-      <a href="#book" class="btn-pill btn-pill-gold">Reserve My Session</a>
-      <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank" class="btn-pill btn-pill-outline">View Full Price Guide</a>
+      <a href="#book" class="btn btn-gold">Reserve My Session</a>
+      <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank" class="btn btn-ghost">View Full Price Guide</a>
     </div>
   </div>
 </section>
 
-<section id="pricing" class="section">
-  <div class="section-inner">
+<!-- PRICING -->
+<section id="pricing" class="sec">
+  <div class="inner">
     <div class="eyebrow">Pricing</div>
-    <h2 class="section-h fade-up">Only Pay for<br><span>What You Love.</span></h2>
-
-    <div class="pricing-note-box fade-up">
-      <p><strong>$25 reservation fee required</strong> to hold your session time. This is applied toward your image purchase and guarantees your spot.</p>
-      <p>We must reach a minimum number of reservations to attend. If that minimum is not met, your $25 is <strong>fully refunded.</strong> Once booked, you can reschedule if needed — however, booking fees are non-refundable.</p>
+    <h2 class="fade">Only Pay for<br><span>What You Love.</span></h2>
+    <div class="p-note fade">
+      <p><strong>$25 reservation fee required</strong> to hold your session time. Applied toward your image purchase and guarantees your spot.</p>
+      <p>We must reach a minimum number of reservations to attend. If that minimum is not met, your $25 is <strong>fully refunded.</strong> Once booked, you can reschedule — booking fees are non-refundable.</p>
     </div>
-
-    <div class="pricing-grid fade-up">
-      <div class="price-card featured">
-        <div class="price-type">Prints</div>
-        <div class="price-amount">$35+</div>
-        <div class="price-sub">Print packages start at $35 and up</div>
-        <ul class="price-list">
+    <div class="p-cards fade">
+      <div class="p-card feat">
+        <div class="p-type">Prints</div>
+        <div class="p-amt">$35+</div>
+        <div class="p-sub">Print packages starting at $35</div>
+        <ul class="p-list">
           <li>Professional print products</li>
           <li>Multiple sizes available</li>
           <li>Only purchase what you love</li>
-          <li>View full guide for all options</li>
+          <li>Full guide at the link below</li>
         </ul>
       </div>
-      <div class="price-card">
-        <div class="price-type">Digital Images</div>
-        <div class="price-amount">$50+</div>
-        <div class="price-sub">Digital images start at $50 for one image</div>
-        <ul class="price-list">
+      <div class="p-card">
+        <div class="p-type">Digital Images</div>
+        <div class="p-amt">$50+</div>
+        <div class="p-sub">Digital images starting at $50 for one</div>
+        <ul class="p-list">
           <li>High-resolution digital files</li>
-          <li>Download, share, print anywhere</li>
+          <li>Download All available at $199</li>
           <li>Only purchase what you love</li>
-          <li>View full guide for all options</li>
+          <li>Full guide at the link below</li>
         </ul>
       </div>
     </div>
-
-    <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank" class="btn-pill btn-pill-outline fade-up" style="margin-bottom:2rem;display:inline-block">View Full Price Guide →</a>
-
-    <div class="promotions fade-up">
-      <div class="promo-header"><div class="promo-header-text">Promotions</div></div>
-      <div class="promo-item">
+    <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank" class="btn btn-ghost fade" style="margin-bottom:2rem;display:inline-block">View Full Price Guide →</a>
+    <div class="promos fade">
+      <div class="promo-hd"><div class="promo-hd-t">Promotions</div></div>
+      <div class="promo-row">
         <div class="promo-tag">Past Client</div>
-        <div class="promo-body"><strong>10% Off Voucher</strong> — For coaches or athletes previously photographed by NBP at a past fencing event.</div>
+        <div class="promo-txt"><strong>10% Off Voucher</strong> — For coaches or athletes photographed by NBP at a previous fencing event.</div>
       </div>
-      <div class="promo-item">
+      <div class="promo-row">
         <div class="promo-tag">Medalist</div>
-        <div class="promo-body"><strong>$25 reservation fee waived</strong> + a 10% off voucher toward your image purchase. Simply stop by our booth with your medal.</div>
+        <div class="promo-txt"><strong>$25 reservation fee waived</strong> + 10% off voucher. Stop by our booth with your medal.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="gallery" class="section">
-  <div class="section-inner">
+<!-- GALLERY -->
+<section id="gallery" class="sec">
+  <div class="inner">
     <div class="eyebrow">Past Sessions</div>
-    <h2 class="section-h fade-up">What to <span>Expect.</span></h2>
-    <div class="photo-grid fade-up">
-      <div class="photo-item" onclick="openLightbox(0)"><img src="hero.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="photo-item" onclick="openLightbox(1)"><img src="g4.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="photo-item" onclick="openLightbox(2)"><img src="g5.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="photo-item" onclick="openLightbox(3)"><img src="g3.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="photo-item" onclick="openLightbox(4)"><img src="g2.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="photo-item" onclick="openLightbox(5)"><img src="g1.jpg" alt="Fencing portrait" loading="lazy"></div>
+    <h2 class="fade">What to <span>Expect.</span></h2>
+    <p class="gallery-sub">Every portrait is shot on-site at USA Fencing events. Click any image to view full size.</p>
+    <div class="photo-grid fade">
+      <div class="photo-item" onclick="openLb(0)"><img src="hero.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLb(1)"><img src="g4.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLb(2)"><img src="g5.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLb(3)"><img src="g3.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLb(4)"><img src="g2.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLb(5)"><img src="g1.jpg" alt="Fencing portrait" loading="lazy"></div>
     </div>
-    <p style="font-size:11px;color:rgba(255,255,255,.2);font-family:'Josefin Sans',sans-serif;letter-spacing:.06em;margin-top:1.25rem;text-align:center">Click any image to view full size · All portraits shot on-site at USA Fencing events</p>
   </div>
 </section>
 
-<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out">
-  <button onclick="shiftLightbox(-1);event.stopPropagation()" style="position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:2.5rem;cursor:pointer;padding:.5rem;line-height:1">&#8592;</button>
-  <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px;pointer-events:none">
-  <button onclick="shiftLightbox(1);event.stopPropagation()" style="position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:2.5rem;cursor:pointer;padding:.5rem;line-height:1">&#8594;</button>
-  <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:rgba(255,255,255,.4);font-size:1.75rem;cursor:pointer;padding:.5rem;line-height:1">&#10005;</button>
+<!-- LIGHTBOX -->
+<div id="lb" onclick="closeLb()">
+  <button class="lb-btn lb-prev" onclick="moveLb(-1);event.stopPropagation()">&#8592;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-btn lb-next" onclick="moveLb(1);event.stopPropagation()">&#8594;</button>
+  <button class="lb-btn lb-close" onclick="closeLb()">&#10005;</button>
 </div>
 
-<!-- BACKGROUND VIDEO -->
-<section id="videobg" style="position:relative;height:85vh;min-height:500px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;">
+<!-- VIDEO -->
+<section id="vid">
   <div class="yt-bg-wrap">
-    <iframe id="ytbg"
-      src="https://www.youtube.com/embed/EerJZ-2IzrU?autoplay=1&mute=1&loop=1&playlist=EerJZ-2IzrU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-      frameborder="0">
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/EerJZ-2IzrU?autoplay=1&mute=1&loop=1&playlist=EerJZ-2IzrU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" allow="autoplay;encrypted-media" allowfullscreen frameborder="0"></iframe>
   </div>
-  <div style="position:absolute;inset:0;background:rgba(8,8,8,.35);z-index:2"></div>
-  <div style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;text-align:center">
-    <a href="#book" class="btn-pill btn-pill-gold" style="font-size:11px;padding:13px 28px;backdrop-filter:blur(4px)">Reserve My Session</a>
+  <div class="vid-ov"></div>
+  <div class="vid-cta">
+    <a href="#book" class="btn btn-gold">Reserve My Session</a>
   </div>
 </section>
 
-<section id="who" class="section">
-  <div class="section-inner">
+<!-- WHO -->
+<section id="who" class="sec">
+  <div class="inner">
     <div class="eyebrow">Built For</div>
-    <h2 class="section-h fade-up">All Age Groups <span>Welcome.</span></h2>
-    <div class="who-cards fade-up">
+    <h2 class="fade">All Age Groups <span>Welcome.</span></h2>
+    <div class="who-cards fade">
       <div class="who-card">
-        <div class="who-num">01</div>
-        <div class="who-title">The Competitor</div>
-        <div class="who-body">You've put in the hours. You know what this event means. A real portrait is how you mark it — powerful additions to your portfolio, recruiting materials, and social media.</div>
+        <div class="who-n">01</div>
+        <div class="who-t">The Competitor</div>
+        <div class="who-b">You've put in the hours. A real portrait is how you mark it — powerful additions to your portfolio, recruiting materials, and social media.</div>
       </div>
       <div class="who-card">
-        <div class="who-num">02</div>
-        <div class="who-title">The Senior Athlete</div>
-        <div class="who-body">This may be one of your last nationals. Get a portrait worth keeping. Something that stands next to your career, not just your season.</div>
+        <div class="who-n">02</div>
+        <div class="who-t">The Senior Athlete</div>
+        <div class="who-b">This may be one of your last nationals. Get a portrait worth keeping. Something that stands next to your career, not just your season.</div>
       </div>
       <div class="who-card">
-        <div class="who-num">03</div>
-        <div class="who-title">The Club Team</div>
-        <div class="who-body">Coaches — bring your team. All age groups are welcome. Group scheduling is available. Reserve before the event to guarantee your athletes' slots.</div>
+        <div class="who-n">03</div>
+        <div class="who-t">The Club Team</div>
+        <div class="who-b">Coaches — bring your team. All age groups welcome. Reserve before the event to guarantee your athletes' time slots.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="faq" class="section">
-  <div class="section-inner">
-    <div class="faq-grid">
-      <div class="faq-sticky">
+<!-- FAQ -->
+<section id="faq" class="sec">
+  <div class="inner">
+    <div class="faq-wrap">
+      <div class="faq-side">
         <div class="eyebrow">FAQ</div>
-        <h2 class="section-h" style="font-size:clamp(24px,3vw,38px)">Everything<br>You Need<br><span>to Know.</span></h2>
+        <h2 style="font-size:clamp(22px,3vw,38px)">Everything<br>You Need<br><span>to Know.</span></h2>
         <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.75rem">
-          <a href="https://drive.google.com/file/d/1uSHDG-ZpuQTdvtfOThPRHxDFyZWMHIRo/view" target="_blank" class="btn-pill btn-pill-outline" style="font-size:10px;padding:10px 20px;display:inline-block">Full FAQ Document →</a>
-          <a href="#book" class="btn-pill btn-pill-gold" style="font-size:10px;padding:10px 20px;display:inline-block">Reserve My Session</a>
+          <a href="https://drive.google.com/file/d/1uSHDG-ZpuQTdvtfOThPRHxDFyZWMHIRo/view" target="_blank" class="btn btn-ghost" style="font-size:10px;padding:10px 20px;display:inline-block">Full FAQ Document →</a>
+          <a href="#book" class="btn btn-gold" style="font-size:10px;padding:10px 20px;display:inline-block">Reserve My Session</a>
         </div>
       </div>
-      <div class="faq-list fade-up">
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where is the portrait booth located?<span class="faq-icon">+</span></button><div class="faq-a">We'll send confirmed booth location and directions in your booking confirmation email. We also post updates on @nathanbinglefencing leading up to the event.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What should I wear?<span class="faq-icon">+</span></button><div class="faq-a">Your competition gear is ideal — jacket, mask under arm, weapon in hand. Don't stress about perfectly clean whites or wrinkle-free gear. That's what professional editing is for.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I have to buy photos after the session?<span class="faq-icon">+</span></button><div class="faq-a">No. You only purchase the images you love. There's no minimum purchase requirement. The $25 reservation fee covers your time slot and is applied toward whatever you decide to buy.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What are the actual prices for prints and digitals?<span class="faq-icon">+</span></button><div class="faq-a">Prints start at $35 and up. Digital images start at $50 for one image. View the complete price guide <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank">here</a> for all available packages.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What happens if the minimum isn't reached?<span class="faq-icon">+</span></button><div class="faq-a">We must reach a minimum number of reservations to attend. If we don't meet that minimum, your $25 reservation fee is fully refunded. No questions asked.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I reschedule after booking?<span class="faq-icon">+</span></button><div class="faq-a">Yes — once you book, you can reschedule if needed. However, booking fees are non-refundable. If you need to transfer your slot to another athlete, contact us directly.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">I'm a medalist — do I still pay the reservation fee?<span class="faq-icon">+</span></button><div class="faq-a">No. Medalists have their $25 reservation fee waived and also receive a 10% off voucher toward their image purchase. Simply stop by our booth with your medal.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">I was photographed at a past NBP fencing event — is there a discount?<span class="faq-icon">+</span></button><div class="faq-a">Yes. Coaches or athletes previously photographed by NBP at a past fencing event receive a 10% off voucher toward their image purchase.</div></div>
+      <div class="faq-list fade">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where is the portrait booth located?<span class="faq-icon">+</span></button><div class="faq-a">We'll send confirmed booth location in your booking confirmation email and post updates on @nathanbinglefencing leading up to the event.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What should I wear?<span class="faq-icon">+</span></button><div class="faq-a">Your competition gear is ideal — jacket, mask under arm, weapon in hand. Don't stress about clean whites or wrinkles. That's what professional editing is for.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I have to buy photos after the session?<span class="faq-icon">+</span></button><div class="faq-a">No. You only purchase the images you love. There's no minimum. The $25 reservation fee is applied toward whatever you decide to buy.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What are the actual prices?<span class="faq-icon">+</span></button><div class="faq-a">Prints start at $35. Digital images start at $50 for one image. Download All is $199. View the complete <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank">price guide here</a>.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if the minimum isn't reached?<span class="faq-icon">+</span></button><div class="faq-a">If we don't reach the minimum number of reservations needed to attend, your $25 fee is fully refunded. No questions asked.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I reschedule after booking?<span class="faq-icon">+</span></button><div class="faq-a">Yes — you can reschedule if needed. Booking fees are non-refundable but can be transferred to another athlete if necessary.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">I'm a medalist — do I still pay the reservation fee?<span class="faq-icon">+</span></button><div class="faq-a">No. Medalists have their $25 fee waived and receive a 10% off voucher toward their purchase. Stop by our booth with your medal.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is there a discount for past NBP clients?<span class="faq-icon">+</span></button><div class="faq-a">Yes. Athletes or coaches previously photographed by NBP at a past fencing event receive a 10% off voucher toward their purchase.</div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="final">
-  <div class="final-glow"></div>
-  <div id="reserve"></div>
-  <div class="final-content">
-    <div class="eyebrow fade-up" style="justify-content:center;display:flex">Last Chance in 2026</div>
-    <h2 class="final-h fade-up">This Is Your<br><span>Only Shot.</span></h2>
-    <p class="final-body fade-up">This is our only portrait session in 2026. Spots fill before the event — reserve before arriving at the Convention Center. $25 holds your spot and is applied to your purchase.</p>
-    <a href="#book" class="btn-pill btn-pill-gold fade-up" style="font-size:12px;padding:16px 36px">Reserve My Session</a>
-    <p class="final-micro fade-up">$25 Reservation Fee · Portland, OR · July 1–6, 2026 · 10am–5pm</p>
   </div>
 </section>
 
 <!-- BOOKING FORM -->
-<section id="book" class="section" style="background:var(--dark)">
-  <div class="section-inner" style="max-width:680px">
+<section id="book" class="sec">
+  <div class="inner" style="max-width:680px">
     <div class="eyebrow">Reserve Your Session</div>
-    <h2 class="section-h fade-up">Lock In Your <span>Spot.</span></h2>
-    <p style="font-size:14px;color:var(--white2);margin-bottom:2.5rem;line-height:1.8">Fill out the form below to reserve your portrait session. A $25 reservation fee is required to confirm your spot — applied toward your image purchase.</p>
-
-    <form id="bookingForm" class="booking-form fade-up" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name</label>
-          <input type="text" name="firstName" class="form-input" placeholder="First name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last Name</label>
-          <input type="text" name="lastName" class="form-input" placeholder="Last name" required>
-        </div>
+    <h2 class="fade">Lock In Your <span>Spot.</span></h2>
+    <p style="font-size:14px;color:var(--white2);margin-bottom:2.5rem;line-height:1.8">Fill out the form below to reserve your session. A $25 reservation fee confirms your spot and is applied toward your purchase.</p>
+    <form id="bform" class="bform fade" onsubmit="submitForm(event)">
+      <div class="frow">
+        <div class="fgrp"><label class="flbl">First Name</label><input type="text" name="firstName" class="finp" placeholder="First name" required></div>
+        <div class="fgrp"><label class="flbl">Last Name</label><input type="text" name="lastName" class="finp" placeholder="Last name" required></div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input type="tel" name="phone" class="form-input" placeholder="(555) 000-0000">
-        </div>
+      <div class="frow">
+        <div class="fgrp"><label class="flbl">Email</label><input type="email" name="email" class="finp" placeholder="your@email.com" required></div>
+        <div class="fgrp"><label class="flbl">Phone</label><input type="tel" name="phone" class="finp" placeholder="(555) 000-0000"></div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Weapon</label>
-          <select name="weapon" class="form-input form-select" required>
-            <option value="" disabled selected>Select weapon</option>
-            <option value="foil">Foil</option>
-            <option value="epee">Épée</option>
-            <option value="sabre">Sabre</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Age Division</label>
-          <select name="division" class="form-input form-select">
-            <option value="" disabled selected>Select division</option>
-            <option value="y10">Y10</option>
-            <option value="y12">Y12</option>
-            <option value="y14">Y14</option>
-            <option value="cadet">Cadet</option>
-            <option value="junior">Junior</option>
-            <option value="senior">Senior</option>
-            <option value="vet">Veteran</option>
-          </select>
-        </div>
+      <div class="frow">
+        <div class="fgrp"><label class="flbl">Weapon</label><select name="weapon" class="finp" required><option value="" disabled selected>Select weapon</option><option>Foil</option><option>Épée</option><option>Sabre</option></select></div>
+        <div class="fgrp"><label class="flbl">Age Division</label><select name="division" class="finp"><option value="" disabled selected>Select division</option><option>Y10</option><option>Y12</option><option>Y14</option><option>Cadet</option><option>Junior</option><option>Senior</option><option>Veteran</option></select></div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Preferred Date</label>
-          <select name="date" class="form-input form-select" required>
-            <option value="" disabled selected>Choose a date</option>
-            <option value="july1">July 1 (Wednesday)</option>
-            <option value="july2">July 2 (Thursday)</option>
-            <option value="july3">July 3 (Friday)</option>
-            <option value="july4">July 4 (Saturday)</option>
-            <option value="july5">July 5 (Sunday)</option>
-            <option value="july6">July 6 (Monday)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Preferred Time</label>
-          <select name="time" class="form-input form-select">
-            <option value="" disabled selected>Choose a time</option>
-            <option value="morning">Morning (10am–12pm)</option>
-            <option value="midday">Midday (12pm–2pm)</option>
-            <option value="afternoon">Afternoon (2pm–5pm)</option>
-            <option value="flexible">Flexible — any time</option>
-          </select>
-        </div>
+      <div class="frow">
+        <div class="fgrp"><label class="flbl">Preferred Date</label><select name="date" class="finp" required><option value="" disabled selected>Choose a date</option><option>July 1 (Wednesday)</option><option>July 2 (Thursday)</option><option>July 3 (Friday)</option><option>July 4 (Saturday)</option><option>July 5 (Sunday)</option><option>July 6 (Monday)</option></select></div>
+        <div class="fgrp"><label class="flbl">Preferred Time</label><select name="time" class="finp"><option value="" disabled selected>Choose a time</option><option>Morning (10am–12pm)</option><option>Midday (12pm–2pm)</option><option>Afternoon (2pm–5pm)</option><option>Flexible</option></select></div>
       </div>
-      <div class="form-group" style="grid-column:1/-1">
-        <label class="form-label">Club / Team <span style="color:var(--gray);font-weight:300">(optional)</span></label>
-        <input type="text" name="club" class="form-input" placeholder="Your fencing club or team name">
+      <div class="fgrp"><label class="flbl">Club / Team <span style="color:var(--gray);font-weight:300">(optional)</span></label><input type="text" name="club" class="finp" placeholder="Your fencing club or team name"></div>
+      <div class="fgrp"><label class="flbl">Notes <span style="color:var(--gray);font-weight:300">(optional)</span></label><textarea name="notes" class="finp ftxt" placeholder="Anything we should know — medalist, past client, group booking, etc."></textarea></div>
+      <div class="fpromo">
+        <div class="fcheck-row"><input type="checkbox" id="pc" name="pastClient" class="fcheck"><label for="pc" class="fcheck-lbl">I've been photographed by NBP at a previous fencing event (10% off voucher)</label></div>
+        <div class="fcheck-row"><input type="checkbox" id="med" name="medalist" class="fcheck"><label for="med" class="fcheck-lbl">I am a medalist — $25 fee waived, 10% off voucher applies</label></div>
       </div>
-      <div class="form-group" style="grid-column:1/-1">
-        <label class="form-label">Notes <span style="color:var(--gray);font-weight:300">(optional)</span></label>
-        <textarea name="notes" class="form-input form-textarea" placeholder="Anything we should know — medalist, returning client, group booking, etc."></textarea>
+      <div class="fsubrow">
+        <div class="ffee"><span class="ffee-amt">$25</span><span class="ffee-lbl">Reservation fee · Applied to your purchase · Refunded if minimum not met</span></div>
+        <button type="submit" class="btn btn-gold" style="border:none">Reserve My Session →</button>
       </div>
-
-      <div class="form-promo fade-up">
-        <div class="promo-check-row">
-          <input type="checkbox" id="pastClient" name="pastClient" class="form-checkbox">
-          <label for="pastClient" class="form-check-label">I have been photographed by NBP at a previous fencing event (10% off voucher)</label>
-        </div>
-        <div class="promo-check-row">
-          <input type="checkbox" id="medalist" name="medalist" class="form-checkbox">
-          <label for="medalist" class="form-check-label">I am a medalist — $25 fee waived, 10% off voucher applies</label>
-        </div>
-      </div>
-
-      <div class="form-submit-row">
-        <div class="form-fee-note">
-          <span class="fee-amount">$25</span>
-          <span class="fee-label">Reservation fee · Applied to your purchase · Fully refunded if minimum not met</span>
-        </div>
-        <button type="submit" class="btn-pill btn-pill-gold" style="font-size:12px;padding:16px 32px;border:none;cursor:pointer">
-          Reserve My Session →
-        </button>
-      </div>
-
-      <div id="formSuccess" class="form-success" style="display:none">
-        <div class="success-icon">✓</div>
-        <div class="success-title">You're almost in.</div>
-        <div class="success-body">Your information has been received. Complete your $25 reservation fee below to confirm your spot.</div>
-        <a href="#payment-link" class="btn-pill btn-pill-gold" style="margin-top:1.5rem;display:inline-block;font-size:12px" id="paymentBtn">Pay $25 Reservation Fee →</a>
-        <p style="font-size:11px;color:var(--gray);margin-top:.75rem">You will receive a confirmation email once payment is complete.</p>
+      <div class="fsuccess" id="fsuccess">
+        <div class="fsuccess-icon">✓</div>
+        <div class="fsuccess-t">You're almost in.</div>
+        <div class="fsuccess-b">Your info has been received. Complete your $25 reservation fee to confirm your spot.</div>
+        <a id="pay-btn" href="https://buy.stripe.com/bJe3cvfw666leVk1vqgA801" target="_blank" class="btn btn-gold" style="margin-top:1.5rem;display:inline-block;font-size:12px">Pay $25 Reservation Fee →</a>
+        <p style="font-size:11px;color:var(--gray);margin-top:.75rem">You'll receive a confirmation email once payment is complete.</p>
       </div>
     </form>
   </div>
 </section>
 
+<!-- FINAL CTA -->
+<section id="final">
+  <div class="final-glow"></div>
+  <div class="final-c">
+    <div class="eyebrow fade" style="justify-content:center;display:flex">Last Chance in 2026</div>
+    <h2 class="fade" style="font-size:clamp(38px,7vw,86px);margin-bottom:1.5rem">This Is Your<br><span>Only Shot.</span></h2>
+    <p class="fade" style="font-size:clamp(14px,1.4vw,17px);color:var(--white2);max-width:460px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8">This is our only portrait session in 2026. Spots fill before the event. $25 holds your spot and is applied to your purchase.</p>
+    <a href="#book" class="btn btn-gold fade" style="font-size:12px;padding:16px 36px">Reserve My Session</a>
+    <p class="final-note fade">$25 Reservation Fee · Portland, OR · July 1–6, 2026 · 10am–5pm</p>
+  </div>
+</section>
 
 <footer>
-  <div class="footer-logo">Nathan Bingle Photography</div>
-  <div class="footer-mid">
+  <div class="f-logo">Nathan Bingle Photography</div>
+  <div class="f-mid">
     <a href="mailto:nathan@nathanbinglephotography.com">nathan@nathanbinglephotography.com</a>
     <a href="https://nathanbinglephotography.com" target="_blank">nathanbinglephotography.com</a>
   </div>
-  <div class="footer-right">
+  <div class="f-right">
     <a href="https://instagram.com/nathanbinglefencing" target="_blank">@nathanbinglefencing</a>
     <a href="https://instagram.com/nathan.bingle.photo.sports" target="_blank">@nathan.bingle.photo.sports</a>
   </div>
-  <div class="footer-copy">© 2026 Nathan Bingle Photography · En Garde Portrait Project</div>
+  <div class="f-copy">© 2026 Nathan Bingle Photography · En Garde Portrait Project</div>
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>document.getElementById('mainnav').classList.toggle('solid',window.scrollY>80));
+// Nav scroll
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('solid',window.scrollY>80);
+});
+
+// Countdown
 function tick(){
-  const t=new Date('2026-07-01T10:00:00-07:00')-new Date();
+  var t=new Date('2026-07-01T10:00:00-07:00')-new Date();
   if(t<=0)return;
-  document.getElementById('cd-days').textContent=String(Math.floor(t/86400000)).padStart(2,'0');
-  document.getElementById('cd-hours').textContent=String(Math.floor(t%86400000/3600000)).padStart(2,'0');
-  document.getElementById('cd-min').textContent=String(Math.floor(t%3600000/60000)).padStart(2,'0');
-  document.getElementById('cd-sec').textContent=String(Math.floor(t%60000/1000)).padStart(2,'0');
+  document.getElementById('cd-d').textContent=String(Math.floor(t/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(t%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(t%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(t%60000/1000)).padStart(2,'0');
 }
-tick();setInterval(tick,1000);
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:.1});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item');
-  const open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!open)item.classList.add('open');
-}
+tick();
+setInterval(tick,1000);
 
-// Show success state
-function showSuccess(isMedalist) {
-  const form = document.getElementById('bookingForm');
-  form.querySelectorAll('.form-row, .form-group, .form-promo, .form-submit-row').forEach(el => el.style.display = 'none');
-  const success = document.getElementById('formSuccess');
-  success.style.display = 'block';
-  const payBtn = document.getElementById('paymentBtn');
-  if (isMedalist) {
-    payBtn.textContent = 'Medalist — just stop by with your medal';
-    payBtn.style.pointerEvents = 'none';
-    payBtn.style.opacity = '0.5';
-    payBtn.removeAttribute('href');
-  } else {
-    payBtn.href = 'https://buy.stripe.com/bJe3cvfw666leVk1vqgA801';
-    payBtn.setAttribute('target', '_blank');
-    payBtn.textContent = 'Pay $25 Reservation Fee →';
-  }
-  success.scrollIntoView({behavior:'smooth', block:'center'});
-}
-
-// Form submission
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('bookingForm');
-  const data = new FormData(form);
-  const isMedalist = data.get('medalist');
-  
-  // Send to Formspree (placeholder endpoint - update with real one)
-  fetch('https://formspree.io/f/xeepaory', {
-    method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  }).then(r => {
-    // Show success regardless (graceful fallback)
-    form.querySelectorAll('.form-row, .form-group, .form-promo, .form-submit-row').forEach(el => el.style.display = 'none');
-    const success = document.getElementById('formSuccess');
-    success.style.display = 'block';
-    
-    // Set payment link based on medalist status
-    const payBtn = document.getElementById('paymentBtn');
-    if (isMedalist) {
-      payBtn.textContent = 'Medalist confirmed — Stop by our booth with your medal';
-      payBtn.style.pointerEvents = 'none';
-      payBtn.style.background = 'var(--gray)';
-    } else {
-      payBtn.href = 'https://buy.stripe.com/bJe3cvfw666leVk1vqgA801'; // Stripe / Square / PayPal link here
-    }
-  }).catch(() => {
-    // Fallback: show success anyway, collect via email
-    form.querySelectorAll('.form-row, .form-group, .form-promo, .form-submit-row').forEach(el => el.style.display = 'none');
-    document.getElementById('formSuccess').style.display = 'block';
+// Scroll animations
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
   });
+},{threshold:0.1});
+document.querySelectorAll('.fade').forEach(function(el){obs.observe(el);});
+
+// FAQ accordion
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
 }
 
 // Lightbox
-const lbImgs = ['hero.jpg','g4.jpg','g5.jpg','g3.jpg','g2.jpg','g1.jpg'];
-let lbIdx = 0;
-function openLightbox(i) {
-  lbIdx = i;
-  document.getElementById('lightbox-img').src = lbImgs[i];
-  document.getElementById('lightbox').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+var lbImgs=['hero.jpg','g4.jpg','g5.jpg','g3.jpg','g2.jpg','g1.jpg'];
+var lbIdx=0;
+function openLb(i){
+  lbIdx=i;
+  document.getElementById('lb-img').src=lbImgs[i];
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
 }
-function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
-  document.body.style.overflow = '';
+function closeLb(){
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow='';
 }
-function shiftLightbox(dir) {
-  lbIdx = (lbIdx + dir + lbImgs.length) % lbImgs.length;
-  document.getElementById('lightbox-img').src = lbImgs[lbIdx];
+function moveLb(dir){
+  lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length;
+  document.getElementById('lb-img').src=lbImgs[lbIdx];
 }
-document.addEventListener('keydown', e => {
-  if (document.getElementById('lightbox').style.display === 'flex') {
-    if (e.key === 'ArrowLeft') shiftLightbox(-1);
-    if (e.key === 'ArrowRight') shiftLightbox(1);
-    if (e.key === 'Escape') closeLightbox();
-  }
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='ArrowLeft')moveLb(-1);
+  if(e.key==='ArrowRight')moveLb(1);
+  if(e.key==='Escape')closeLb();
 });
+
+// Booking form
+function submitForm(e){
+  e.preventDefault();
+  var form=document.getElementById('bform');
+  var data=new FormData(form);
+  var isMedalist=data.get('medalist');
+  fetch('https://formspree.io/f/xeepaory',{
+    method:'POST',body:data,headers:{'Accept':'application/json'}
+  }).then(function(){
+    showSuccess(isMedalist);
+  }).catch(function(){
+    showSuccess(isMedalist);
+  });
+}
+function showSuccess(isMedalist){
+  var form=document.getElementById('bform');
+  form.querySelectorAll('.frow,.fgrp,.fpromo,.fsubrow').forEach(function(el){el.style.display='none';});
+  var s=document.getElementById('fsuccess');
+  s.style.display='block';
+  var btn=document.getElementById('pay-btn');
+  if(isMedalist){
+    btn.textContent='Medalist confirmed — stop by with your medal';
+    btn.style.pointerEvents='none';
+    btn.style.opacity='0.5';
+  }
+  s.scrollIntoView({behavior:'smooth',block:'center'});
+}
 </script>
 </body>
 </html>
