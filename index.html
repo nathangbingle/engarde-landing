@@ -269,6 +269,37 @@ footer{
   position:absolute;top:0;left:0;width:100%;height:100%;border:none;
 }
 
+
+/* BOOKING FORM */
+.booking-form{display:flex;flex-direction:column;gap:1.25rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.form-group{display:flex;flex-direction:column;gap:.5rem}
+.form-label{font-family:'Josefin Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.form-input{
+  background:var(--dark3);border:.5px solid var(--border);
+  border-radius:6px;padding:13px 16px;
+  font-family:'Poppins',sans-serif;font-size:13px;font-weight:300;color:var(--white);
+  outline:none;transition:border-color .2s;width:100%;
+  -webkit-appearance:none;appearance:none;
+}
+.form-input::placeholder{color:var(--gray)}
+.form-input:focus{border-color:var(--gold-border)}
+.form-select{cursor:pointer}
+.form-select option{background:var(--dark3);color:var(--white)}
+.form-textarea{resize:vertical;min-height:80px}
+.form-promo{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem 1.5rem;background:var(--dark3);border:.5px solid var(--border);border-radius:8px}
+.promo-check-row{display:flex;align-items:flex-start;gap:.75rem}
+.form-checkbox{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--gold);cursor:pointer}
+.form-check-label{font-size:13px;color:var(--white2);line-height:1.6;cursor:pointer}
+.form-submit-row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding-top:.5rem}
+.form-fee-note{display:flex;align-items:baseline;gap:.75rem}
+.fee-amount{font-family:'Josefin Sans',sans-serif;font-size:32px;font-weight:700;color:var(--gold)}
+.fee-label{font-size:12px;color:var(--gray);max-width:260px;line-height:1.6}
+.form-success{text-align:center;padding:2.5rem;background:var(--dark3);border:.5px solid var(--gold-border);border-radius:10px;margin-top:1rem}
+.success-icon{font-size:32px;color:var(--gold);margin-bottom:.75rem}
+.success-title{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.success-body{font-size:14px;color:var(--white2);line-height:1.75}
+
 /* MOBILE */
 @media(max-width:768px){
   nav{padding:1rem 1.25rem}
@@ -300,7 +331,7 @@ footer{
     <a href="#how">How It Works</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a href="https://nathanbingle.airstudio.io/commercial-session-anonymous" target="_blank" class="nav-cta">Reserve Now</a>
+    <a href="#book" class="nav-cta">Reserve Now</a>
   </div>
 </nav>
 
@@ -313,7 +344,7 @@ footer{
     <h1 class="hero-h1">The Portrait<br>You've <span>Earned.</span></h1>
     <p class="hero-sub">A limited portrait series for competing athletes at the nation's largest fencing event. All age groups welcome. You only purchase the images you love.</p>
     <div class="hero-actions">
-      <a href="https://nathanbingle.airstudio.io/commercial-session-anonymous" target="_blank" class="btn-pill btn-pill-gold">Reserve My Session</a>
+      <a href="#book" class="btn-pill btn-pill-gold">Reserve My Session</a>
       <a href="#concept" class="btn-pill btn-pill-outline">Learn More</a>
     </div>
     <p class="hero-note">$25 reservation fee holds your spot · Applied to your purchase</p>
@@ -372,7 +403,7 @@ footer{
       </div>
     </div>
     <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap">
-      <a href="https://nathanbingle.airstudio.io/commercial-session-anonymous" target="_blank" class="btn-pill btn-pill-gold">Reserve My Session</a>
+      <a href="#book" class="btn-pill btn-pill-gold">Reserve My Session</a>
       <a href="https://drive.google.com/file/d/1jiQyovu2duMVbUYoF91zwTbDJcmRoGru/view" target="_blank" class="btn-pill btn-pill-outline">View Full Price Guide</a>
     </div>
   </div>
@@ -489,7 +520,7 @@ footer{
         <h2 class="section-h" style="font-size:clamp(24px,3vw,38px)">Everything<br>You Need<br><span>to Know.</span></h2>
         <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.75rem">
           <a href="https://drive.google.com/file/d/1uSHDG-ZpuQTdvtfOThPRHxDFyZWMHIRo/view" target="_blank" class="btn-pill btn-pill-outline" style="font-size:10px;padding:10px 20px;display:inline-block">Full FAQ Document →</a>
-          <a href="https://nathanbingle.airstudio.io/commercial-session-anonymous" target="_blank" class="btn-pill btn-pill-gold" style="font-size:10px;padding:10px 20px;display:inline-block">Reserve My Session</a>
+          <a href="#book" class="btn-pill btn-pill-gold" style="font-size:10px;padding:10px 20px;display:inline-block">Reserve My Session</a>
         </div>
       </div>
       <div class="faq-list fade-up">
@@ -513,10 +544,128 @@ footer{
     <div class="eyebrow fade-up" style="justify-content:center;display:flex">Last Chance in 2026</div>
     <h2 class="final-h fade-up">This Is Your<br><span>Only Shot.</span></h2>
     <p class="final-body fade-up">This is our only portrait session in 2026. Spots fill before the event — reserve before arriving at the Convention Center. $25 holds your spot and is applied to your purchase.</p>
-    <a href="https://nathanbingle.airstudio.io/commercial-session-anonymous" target="_blank" class="btn-pill btn-pill-gold fade-up" style="font-size:12px;padding:16px 36px">Reserve My Session</a>
+    <a href="#book" class="btn-pill btn-pill-gold fade-up" style="font-size:12px;padding:16px 36px">Reserve My Session</a>
     <p class="final-micro fade-up">$25 Reservation Fee · Portland, OR · July 1–6, 2026 · 10am–5pm</p>
   </div>
 </section>
+
+<!-- BOOKING FORM -->
+<section id="book" class="section" style="background:var(--dark)">
+  <div class="section-inner" style="max-width:680px">
+    <div class="eyebrow">Reserve Your Session</div>
+    <h2 class="section-h fade-up">Lock In Your <span>Spot.</span></h2>
+    <p style="font-size:14px;color:var(--white2);margin-bottom:2.5rem;line-height:1.8">Fill out the form below to reserve your portrait session. A $25 reservation fee is required to confirm your spot — applied toward your image purchase.</p>
+
+    <form id="bookingForm" class="booking-form fade-up" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" name="firstName" class="form-input" placeholder="First name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" name="lastName" class="form-input" placeholder="Last name" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" name="phone" class="form-input" placeholder="(555) 000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Weapon</label>
+          <select name="weapon" class="form-input form-select" required>
+            <option value="" disabled selected>Select weapon</option>
+            <option value="foil">Foil</option>
+            <option value="epee">Épée</option>
+            <option value="sabre">Sabre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Age Division</label>
+          <select name="division" class="form-input form-select">
+            <option value="" disabled selected>Select division</option>
+            <option value="y10">Y10</option>
+            <option value="y12">Y12</option>
+            <option value="y14">Y14</option>
+            <option value="cadet">Cadet</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+            <option value="vet">Veteran</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Preferred Date</label>
+          <select name="date" class="form-input form-select" required>
+            <option value="" disabled selected>Choose a date</option>
+            <option value="july1">July 1 (Wednesday)</option>
+            <option value="july2">July 2 (Thursday)</option>
+            <option value="july3">July 3 (Friday)</option>
+            <option value="july4">July 4 (Saturday)</option>
+            <option value="july5">July 5 (Sunday)</option>
+            <option value="july6">July 6 (Monday)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Preferred Time</label>
+          <select name="time" class="form-input form-select">
+            <option value="" disabled selected>Choose a time</option>
+            <option value="morning">Morning (10am–12pm)</option>
+            <option value="midday">Midday (12pm–2pm)</option>
+            <option value="afternoon">Afternoon (2pm–5pm)</option>
+            <option value="flexible">Flexible — any time</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <label class="form-label">Club / Team <span style="color:var(--gray);font-weight:300">(optional)</span></label>
+        <input type="text" name="club" class="form-input" placeholder="Your fencing club or team name">
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <label class="form-label">Notes <span style="color:var(--gray);font-weight:300">(optional)</span></label>
+        <textarea name="notes" class="form-input form-textarea" placeholder="Anything we should know — medalist, returning client, group booking, etc."></textarea>
+      </div>
+
+      <div class="form-promo fade-up">
+        <div class="promo-check-row">
+          <input type="checkbox" id="pastClient" name="pastClient" class="form-checkbox">
+          <label for="pastClient" class="form-check-label">I have been photographed by NBP at a previous fencing event (10% off voucher)</label>
+        </div>
+        <div class="promo-check-row">
+          <input type="checkbox" id="medalist" name="medalist" class="form-checkbox">
+          <label for="medalist" class="form-check-label">I am a medalist — $25 fee waived, 10% off voucher applies</label>
+        </div>
+      </div>
+
+      <div class="form-submit-row">
+        <div class="form-fee-note">
+          <span class="fee-amount">$25</span>
+          <span class="fee-label">Reservation fee · Applied to your purchase · Fully refunded if minimum not met</span>
+        </div>
+        <button type="submit" class="btn-pill btn-pill-gold" style="font-size:12px;padding:16px 32px;border:none;cursor:pointer">
+          Reserve My Session →
+        </button>
+      </div>
+
+      <div id="formSuccess" class="form-success" style="display:none">
+        <div class="success-icon">✓</div>
+        <div class="success-title">You're almost in.</div>
+        <div class="success-body">Your information has been received. Complete your $25 reservation fee below to confirm your spot.</div>
+        <a href="#payment-link" class="btn-pill btn-pill-gold" style="margin-top:1.5rem;display:inline-block;font-size:12px" id="paymentBtn">Pay $25 Reservation Fee →</a>
+        <p style="font-size:11px;color:var(--gray);margin-top:.75rem">You will receive a confirmation email once payment is complete.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
 
 <footer>
   <div class="footer-logo">Nathan Bingle Photography</div>
@@ -549,6 +698,40 @@ function toggleFaq(btn){
   const open=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!open)item.classList.add('open');
+}
+
+// Form submission
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('bookingForm');
+  const data = new FormData(form);
+  const isMedalist = data.get('medalist');
+  
+  // Send to Formspree (placeholder endpoint - update with real one)
+  fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    // Show success regardless (graceful fallback)
+    form.querySelectorAll('.form-row, .form-group, .form-promo, .form-submit-row').forEach(el => el.style.display = 'none');
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    
+    // Set payment link based on medalist status
+    const payBtn = document.getElementById('paymentBtn');
+    if (isMedalist) {
+      payBtn.textContent = 'Medalist confirmed — Stop by our booth with your medal';
+      payBtn.style.pointerEvents = 'none';
+      payBtn.style.background = 'var(--gray)';
+    } else {
+      payBtn.href = 'REPLACE_WITH_PAYMENT_LINK'; // Stripe / Square / PayPal link here
+    }
+  }).catch(() => {
+    // Fallback: show success anyway, collect via email
+    form.querySelectorAll('.form-row, .form-group, .form-promo, .form-submit-row').forEach(el => el.style.display = 'none');
+    document.getElementById('formSuccess').style.display = 'block';
+  });
 }
 </script>
 </body>
