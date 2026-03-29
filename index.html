@@ -463,17 +463,24 @@ footer{
   <div class="section-inner">
     <div class="eyebrow">Past Sessions</div>
     <h2 class="section-h fade-up">What to <span>Expect.</span></h2>
-    <p class="gallery-sub">Every portrait is shot on-site at USA Fencing events.</p>
-    <div class="gallery-grid fade-up">
-      <div class="gi g1"><img src="hero.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="gi g2"><img src="g4.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="gi g3"><img src="g5.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="gi g4"><img src="g1.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="gi g5"><img src="g2.jpg" alt="Fencing portrait" loading="lazy"></div>
-      <div class="gi g6"><img src="g3.jpg" alt="Fencing portrait" loading="lazy"></div>
+    <div class="photo-grid fade-up">
+      <div class="photo-item" onclick="openLightbox(0)"><img src="hero.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLightbox(1)"><img src="g4.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLightbox(2)"><img src="g5.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLightbox(3)"><img src="g3.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLightbox(4)"><img src="g2.jpg" alt="Fencing portrait" loading="lazy"></div>
+      <div class="photo-item" onclick="openLightbox(5)"><img src="g1.jpg" alt="Fencing portrait" loading="lazy"></div>
     </div>
+    <p style="font-size:11px;color:rgba(255,255,255,.2);font-family:'Josefin Sans',sans-serif;letter-spacing:.06em;margin-top:1.25rem;text-align:center">Click any image to view full size · All portraits shot on-site at USA Fencing events</p>
   </div>
 </section>
+
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out">
+  <button onclick="shiftLightbox(-1);event.stopPropagation()" style="position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:2.5rem;cursor:pointer;padding:.5rem;line-height:1">&#8592;</button>
+  <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px;pointer-events:none">
+  <button onclick="shiftLightbox(1);event.stopPropagation()" style="position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:2.5rem;cursor:pointer;padding:.5rem;line-height:1">&#8594;</button>
+  <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:rgba(255,255,255,.4);font-size:1.75rem;cursor:pointer;padding:.5rem;line-height:1">&#10005;</button>
+</div>
 
 <!-- BACKGROUND VIDEO -->
 <section id="videobg" style="position:relative;height:85vh;min-height:500px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;">
